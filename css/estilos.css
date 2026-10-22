@@ -14,8 +14,34 @@ h1 {
     color: darkgreen;
 }
 
-section {
+/* Estilos del menu */
+
+nav {
     margin-top: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    color: darkgreen;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    margin-top: 30px;
 }
 
 footer {
