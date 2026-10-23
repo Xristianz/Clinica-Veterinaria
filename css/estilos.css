@@ -1,49 +1,201 @@
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: black;
-    margin: 20px;
+/* Colores */
+
+:root {
+    --color-principal: #155c55;
+    --color-fondo: #ffffff;
+    --color-texto: #222222;
+    --color-borde: #cccccc;
+    --color-suave: #f2f7f4;
+    --color-foco: #a44500;
 }
+
+/* Estilos generales */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.pagina {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
+}
+
+h1, h2 {
+    color: var(--color-principal);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Cabecera y menu */
 
 header {
-    padding: 10px;
-}
-
-h1 {
-    color: darkgreen;
-}
-
-/* Estilos del menu */
-
-nav {
-    margin-top: 20px;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-borde);
 }
 
 nav ul {
-    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 0;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 15px;
+    list-style: none;
 }
 
 nav a {
-    color: darkgreen;
+    color: var(--color-principal);
     text-decoration: none;
-    padding: 8px;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-section {
-    margin-top: 30px;
+/* Contenido */
+
+.contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 25px;
+    margin-top: 20px;
 }
 
+.principal {
+    min-width: 0;
+}
+
+section {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+aside {
+    background: var(--color-suave);
+    padding: 15px;
+    align-self: start;
+}
+
+/* Tabla */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid var(--color-borde);
+    padding: 8px;
+    text-align: left;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+thead {
+    background: var(--color-principal);
+    color: var(--color-fondo);
+}
+
+/* Formulario */
+
+fieldset {
+    border: 1px solid var(--color-borde);
+    margin: 15px 0;
+    padding: 15px;
+    min-width: 0;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--color-principal);
+}
+
+.campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.campos div {
+    min-width: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    font: inherit;
+    border: 1px solid var(--color-borde);
+}
+
+.completo {
+    grid-column: 1 / -1;
+}
+
+button {
+    background: var(--color-principal);
+    color: var(--color-fondo);
+    border: 0;
+    padding: 10px 20px;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* Accesibilidad */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-foco);
+    outline-offset: 3px;
+}
+
+/* Pantallas pequeñas */
+
+@media (max-width: 1024px) {
+    .contenido, .campos {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Impresion */
+
+@media print {
+    nav, #cita {
+        display: none;
+    }
+
+    .contenido {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pie de pagina */
+
 footer {
-    margin-top: 30px;
+    text-align: center;
+    padding: 15px;
 }

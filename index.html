@@ -11,12 +11,13 @@
 
 <body>
 
+<div class="pagina">
+
     <header>
         <h1>Clínica Veterinaria Huellitas</h1>
-        <p>Cuidamos la salud de tus mascotas</p>
+        <p>Cuidamos la salud y el bienestar de tus mascotas</p>
 
-        <!-- Menu de navegacion -->
-        <nav aria-label="Navegación principal">
+        <nav aria-label="Menú principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -24,52 +25,220 @@
                 <li><a href="#cita">Solicitar cita</a></li>
             </ul>
         </nav>
-
     </header>
 
-    <main>
+    <main class="contenido">
 
-        <section id="inicio">
-            <h2>Bienvenidos</h2>
-            <p>
-                Somos una clínica veterinaria dedicada
-                al cuidado y bienestar de los animales.
-            </p>
-        </section>
+        <div class="principal">
 
-        <section id="servicios">
-            <h2>Nuestros servicios</h2>
+            <!-- INICIO -->
+            <section id="inicio">
+                <h2>Bienvenidos</h2>
+                <p>
+                    Somos una clínica veterinaria dedicada al cuidado
+                    de los animales. Ofrecemos atención para mantener
+                    saludables a tus mascotas.
+                </p>
 
+                <img src="img/Logo.png"
+                     alt="ilusstracion logo de la clinica"
+                     width="300" height="300">
+            </section>
+
+            <!-- SERVICIOS -->
+            <section id="servicios">
+                <h2>Nuestros servicios</h2>
+                <ul>
+                    <li>Consulta veterinaria general</li>
+                    <li>Vacunación</li>
+                    <li>Desparasitación</li>
+                    <li>Control de salud</li>
+                </ul>
+            </section>
+
+            <!-- HORARIOS -->
+            <section id="horarios">
+                <h2>Horarios de atención</h2>
+
+                <table>
+                    <caption>Horario de la clínica</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Día</th>
+                            <th scope="col">Horario</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Lunes a viernes</th>
+                            <td>08:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sábado</th>
+                            <td>09:00 - 13:00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Domingo</th>
+                            <td>Cerrado</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </section>
+            <section id="cita">
+                <h2>Formulario de consulta veterinaria</h2>
+                <p>Ingresa los datos para solicitar una consulta.</p>
+
+                <form action="#cita" method="get">
+
+                    <fieldset>
+                        <legend>Datos del propietario</legend>
+
+                        <div class="campos">
+                            <div>
+                                <label for="nombre">Nombre completo *</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+
+                            <div>
+                                <label for="telefono">Teléfono *</label>
+                                <input type="tel" id="telefono" name="telefono"
+                                       pattern="[0-9]{10}"
+                                       title="Ingresa 10 números" required>
+                            </div>
+
+                            <div>
+                                <label for="correo">Correo electrónico *</label>
+                                <input type="email" id="correo" name="correo" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Datos de la mascota</legend>
+
+                        <div class="campos">
+                            <div>
+                                <label for="mascota">Nombre de la mascota *</label>
+                                <input type="text" id="mascota" name="mascota" required>
+                            </div>
+
+                            <div>
+                                <label for="animal">Tipo de animal *</label>
+                                <select id="animal" name="animal" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="perro">Perro</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="conejo">Conejo</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="raza">Raza</label>
+                                <input type="text" id="raza" name="raza">
+                            </div>
+
+                            <div>
+                                <label for="sexo">Sexo *</label>
+                                <select id="sexo" name="sexo" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="macho">Macho</option>
+                                    <option value="hembra">Hembra</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="edad">Edad en años *</label>
+                                <input type="number" id="edad" name="edad"
+                                       min="0" max="30" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Motivo de consulta</legend>
+
+                        <div class="campos">
+                            <div>
+                                <label for="motivo">Motivo principal *</label>
+                                <select id="motivo" name="motivo" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="revision">Revisión general</option>
+                                    <option value="vacunas">Vacunación</option>
+                                    <option value="enfermedad">Enfermedad</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="fecha">Fecha preferida *</label>
+                                <input type="date" id="fecha" name="fecha" required>
+                            </div>
+
+                            <div class="completo">
+                                <label for="descripcion">Descripción de la consulta *</label>
+                                <textarea id="descripcion" name="descripcion"
+                                          rows="3" minlength="10" required></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Servicios solicitados</legend>
+                        <p>Escribe hasta tres servicios de interés.</p>
+
+                        <div class="campos">
+                            <div>
+                                <label for="servicio1">Servicio 1 *</label>
+                                <input id="servicio1" name="servicio1"
+                                       list="lista-servicios" required>
+                            </div>
+
+                            <div>
+                                <label for="servicio2">Servicio 2</label>
+                                <input id="servicio2" name="servicio2"
+                                       list="lista-servicios">
+                            </div>
+
+                            <div>
+                                <label for="servicio3">Servicio 3</label>
+                                <input id="servicio3" name="servicio3"
+                                       list="lista-servicios">
+                            </div>
+                        </div>
+
+                        <datalist id="lista-servicios">
+                            <option value="Consulta general">
+                            <option value="Vacunación">
+                            <option value="Desparasitación">
+                            <option value="Control dental">
+                        </datalist>
+                    </fieldset>
+                    <button type="submit">Comprobar datos</button>
+
+                </form>
+            </section>
+
+        </div>
+
+        <aside>
+            <h2>Consejos para tu mascota</h2>
             <ul>
-                <li>Consulta general</li>
-                <li>Vacunación</li>
-                <li>Desparasitación</li>
+                <li>Mantén sus vacunas al día.</li>
+                <li>Dale una buena alimentación.</li>
+                <li>Realiza controles veterinarios.</li>
+                <li>Proporciónale agua limpia.</li>
             </ul>
-        </section>
-
-        <section id="horarios">
-            <h2>Horarios de atención</h2>
-            <p>
-                Próximamente agregaremos nuestros
-                horarios de atención.
-            </p>
-        </section>
-
-        <section id="cita">
-            <h2>Solicitar una cita</h2>
-            <p>
-                Aquí podrás solicitar una consulta
-                para tu mascota.
-            </p>
-        </section>
+        </aside>
 
     </main>
 
     <footer>
         <p>Clínica Veterinaria Huellitas</p>
-        <p>Proyecto académico de HTML y CSS</p>
     </footer>
 
-</body>
+</div>
 
+</body>
 </html>
