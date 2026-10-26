@@ -6,10 +6,10 @@
     --color-fondo: #ffffff;
     --color-texto: #222222;
     --color-borde: #cccccc;
+    --color-borde-campo: #767676;
     --color-suave: #f2f7f4;
     --color-foco: #a44500;
 }
-
 /* Estilos generales */
 
 * {
@@ -146,7 +146,7 @@ input, select, textarea {
     width: 100%;
     padding: 8px;
     font: inherit;
-    border: 1px solid var(--color-borde);
+    border: 1px solid var(--color-borde-campo);
 }
 
 .completo {

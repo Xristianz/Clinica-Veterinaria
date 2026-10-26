@@ -41,7 +41,7 @@
                 </p>
 
                 <img src="img/Logo.png"
-                     alt="ilusstracion logo de la clinica"
+                    alt="Logo de la Clínica Veterinaria Huellitas"
                      width="300" height="300">
             </section>
 
@@ -87,8 +87,10 @@
             </section>
             <section id="cita">
                 <h2>Formulario de consulta veterinaria</h2>
-                <p>Ingresa los datos para solicitar una consulta.</p>
-
+                <p>
+                    Ingresa los datos para solicitar una consulta.
+                    Los campos marcados con un asterisco (*) son obligatorios.
+                </p>
                 <form action="#cita" method="get">
 
                     <fieldset>
@@ -97,19 +99,30 @@
                         <div class="campos">
                             <div>
                                 <label for="nombre">Nombre completo *</label>
-                                <input type="text" id="nombre" name="nombre" required>
+                                <input type="text" id="nombre" name="nombre"
+                                    autocomplete="name" required>
                             </div>
 
+                            
                             <div>
                                 <label for="telefono">Teléfono *</label>
+
                                 <input type="tel" id="telefono" name="telefono"
-                                       pattern="[0-9]{10}"
-                                       title="Ingresa 10 números" required>
+                                    autocomplete="tel"
+                                    pattern="[0-9]{10}"
+                                    title="Ingresa 10 números"
+                                    aria-describedby="ayuda-telefono"
+                                    required>
+
+                                <small id="ayuda-telefono">
+                                    Ingresa 10 números sin espacios ni guiones.
+                                </small>
                             </div>
 
                             <div>
                                 <label for="correo">Correo electrónico *</label>
-                                <input type="email" id="correo" name="correo" required>
+                                <input type="email" id="correo" name="correo"
+                                    autocomplete="email" required>
                             </div>
                         </div>
                     </fieldset>
