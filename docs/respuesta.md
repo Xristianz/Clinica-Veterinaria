@@ -27,5 +27,3 @@
 ## Conclusión
 
 Se revisaron las observaciones recibidas y se realizaron correcciones de accesibilidad en el formulario. También se identificó un hallazgo sobre Grid que puede refutarse mediante la inspección del CSS y el navegador.
-
-El informe se completará con los identificadores de los commits y las comprobaciones pendientes.
