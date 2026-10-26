@@ -202,23 +202,29 @@
                         <p>Escribe hasta tres servicios de interés.</p>
 
                         <div class="campos">
-                            <div>
-                                <label for="servicio1">Servicio 1 *</label>
-                                <input id="servicio1" name="servicio1"
-                                       list="lista-servicios" required>
-                            </div>
+                           <div>
+                            <label for="servicio1">Servicio 1 *</label>
+                            <input id="servicio1" name="servicio1"
+                                list="lista-servicios"
+                                pattern="Consulta general|Vacunación|Desparasitación|Control dental"
+                                title="Selecciona un servicio de la lista"
+                                required>
+                        </div>
 
-                            <div>
-                                <label for="servicio2">Servicio 2</label>
-                                <input id="servicio2" name="servicio2"
-                                       list="lista-servicios">
-                            </div>
+                        <div>
+                            <label for="servicio2">Servicio 2</label>
+                            <input id="servicio2" name="servicio2"
+                                list="lista-servicios"
+                                pattern="Consulta general|Vacunación|Desparasitación|Control dental"
+                                title="Selecciona un servicio de la lista">
+                        </div>
 
-                            <div>
-                                <label for="servicio3">Servicio 3</label>
-                                <input id="servicio3" name="servicio3"
-                                       list="lista-servicios">
-                            </div>
+                        <div>
+                            <label for="servicio3">Servicio 3</label>
+                            <input id="servicio3" name="servicio3"
+                                list="lista-servicios"
+                                pattern="Consulta general|Vacunación|Desparasitación|Control dental"
+                                title="Selecciona un servicio de la lista">
                         </div>
 
                         <datalist id="lista-servicios">
